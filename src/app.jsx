@@ -6,6 +6,10 @@ const title = "React with Webpack and Babel";
 function App() {
   return (
     <div>
+
+
+
+      
       <Title text={title} />
     </div>
   );
