@@ -8,12 +8,33 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
+      },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                namedExport: false,
+              },
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: "url-loader",
+        },
       },
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".css"],
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
