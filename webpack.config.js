@@ -31,6 +31,10 @@ module.exports = {
           loader: "url-loader",
         },
       },
+      {
+        test: /\.(woff|woff2)$/,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
